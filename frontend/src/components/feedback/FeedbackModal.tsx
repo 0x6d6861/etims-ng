@@ -26,7 +26,7 @@ function FeedbackModal(props: { children: ReactNode }) {
   });
 
   return (
-    <Dialog>
+    <Dialog modal>
       <DialogTrigger asChild>{props.children}</DialogTrigger>
       <DialogContent className="sm:max-w-[500px]">
         <DialogHeader>
