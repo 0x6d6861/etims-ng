@@ -6,6 +6,7 @@ import { getUser } from "@/store/features/auth/slice";
 import AccountModal from "./auth/AccountModal";
 import { User } from "firebase/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import FeedbackModal from "./feedback/FeedbackModal";
 
 // @ts-ignore
 function MenuIcon(props) {
@@ -62,13 +63,13 @@ function Topbar() {
           </Link>
           <div className="hidden md:flex items-center gap-6">
             <Link
-              to={"/verify"}
+              to={"/etims/verify"}
               className="text-sm font-medium hover:underline underline-offset-4"
             >
               Verify
             </Link>
             <Link
-              to={"/verify"}
+              to={"/search"}
               className="text-sm font-medium hover:underline underline-offset-4"
             >
               Search
@@ -76,15 +77,11 @@ function Topbar() {
           </div>
         </nav>
         <div className="flex items-center gap-4">
-          {user && (
-            <Button className="hidden md:inline-flex rounded-full">
-              New Upload
+          <FeedbackModal>
+            <Button variant={"outline"} className="rounded-full">
+              Feedback
             </Button>
-          )}
-
-          <Button variant={"outline"} className="rounded-full">
-            Feedback
-          </Button>
+          </FeedbackModal>
 
           {!user && (
             <LoginModal>

@@ -1,5 +1,7 @@
 import Layout from "@/pages/protected/layout";
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import Verify from "@/pages/protected/etims/verify";
+import Search from "@/pages/protected/search/search";
+import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -8,12 +10,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: "etims",
-        element: <div>etims Page</div>,
-        index: true,
+        element: <Outlet />,
+        children: [
+          {
+            path: "verify",
+            element: <Verify />,
+            index: true,
+          },
+        ],
       },
       {
         path: "search",
-        element: <div>search Page</div>,
+        element: <Search />,
         index: true,
       },
     ],
@@ -23,7 +31,7 @@ const router = createBrowserRouter([
     element: (
       <Navigate
         to={{
-          pathname: "/etims",
+          pathname: "/etims/verify",
         }}
       />
     ),
