@@ -1,6 +1,6 @@
 import Topbar from "@/components/Topbar";
 import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 // import { GeistMono } from "geist/font/mono";
 // import { GeistSans } from "geist/font/sans";
 
@@ -14,7 +14,7 @@ function layout() {
         <Outlet />
       </div>
       <div className="container mx-auto">
-        <footer className="text-center h-16 sm:h-20 w-full sm:pt-2 pt-4 border-t mt-5 flex sm:flex-row flex-col justify-between items-center px-3 space-y-3 sm:mb-0 mb-3">
+        <footer className="text-center min-h-20 w-full sm:pt-2 pt-4 border-t mt-5 flex sm:flex-row flex-col justify-between items-center px-3 space-y-3 sm:mb-0 mb-3">
           <div>
             Created by{" "}
             <a
@@ -43,6 +43,14 @@ function layout() {
             >
               <GitHubLogoIcon className="h-4 w-4" />
             </a>
+          </div>
+          <div className="flex space-x-4 pb-4 sm:pb-0">
+            <Link to={"/terms"} className="underline underline-offset-2">
+              Terms of Service
+            </Link>{" "}
+            <Link to={"/privacy"} className="underline underline-offset-2">
+              Privacy Policy
+            </Link>
           </div>
         </footer>
       </div>

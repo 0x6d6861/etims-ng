@@ -99,17 +99,19 @@ function LoginModal(props: { children: React.ReactNode }) {
             <ChromeIcon className="h-5 w-5 mr-2" />
             Sign in with Google
           </Button>
-          <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-            By signing in, you agree to our{" "}
-            <Link to={"/terms"} className="underline underline-offset-2">
-              Terms of Service
-            </Link>{" "}
-            and{" "}
-            <Link to={"/privacy"} className="underline underline-offset-2">
-              Privacy Policy
-            </Link>
-            .
-          </p>
+          <div className="space-y-2 px-8 text-center">
+            <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+              By signing in, you agree to our{" "}
+              <Link to={"/terms"} className="underline underline-offset-2">
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link to={"/privacy"} className="underline underline-offset-2">
+                Privacy Policy
+              </Link>
+              .
+            </p>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
