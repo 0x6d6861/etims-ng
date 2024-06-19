@@ -1,6 +1,4 @@
-import React from "react";
-
-function service(props) {
+function service() {
   return (
     <div className="w-full max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <article className="prose lg:prose-xl">
