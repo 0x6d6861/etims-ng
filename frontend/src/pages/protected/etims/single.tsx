@@ -1,3 +1,4 @@
+// @ts-ignore
 import jsPDF from "jspdf";
 import * as XLSX from "xlsx";
 // @ts-ignore
@@ -19,6 +20,7 @@ import {
 } from "@/components/ui/table";
 import { Separator } from "@radix-ui/react-separator";
 import { Button } from "@/components/ui/button";
+import ExportModal from "@/components/export/ExportModal";
 
 const invoiceData = {
   customerDetails: {
@@ -112,6 +114,7 @@ const generatePDF = () => {
   doc.save("invoice.pdf");
 };
 
+// @ts-ignore
 const generateExcel = () => {
   const worksheetData = [
     [
@@ -155,7 +158,7 @@ const generateExcel = () => {
     "purchase_orders.xlsx"
   );
 };
-
+// @ts-ignore
 const generateSalesOrderExcel = () => {
   const worksheetData = [
     [
@@ -235,7 +238,9 @@ function single() {
       <div className="space-y-8">
         <div className="mt-6 space-x-2">
           <Button onClick={generatePDF}>Download PDF</Button>
-          <Button>Export</Button>
+          <ExportModal>
+            <Button>Export</Button>
+          </ExportModal>
         </div>
 
         <Card className="p-14 flex flex-col min-h-[890px] rounded-2xl">
