@@ -18,6 +18,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Separator } from "@radix-ui/react-separator";
+import { Button } from "@/components/ui/button";
 
 const invoiceData = {
   customerDetails: {
@@ -232,25 +233,9 @@ function single() {
   return (
     <div className="w-full max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div className="space-y-8">
-        <div className="mt-6">
-          <button
-            onClick={generatePDF}
-            className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
-          >
-            Download PDF
-          </button>
-          <button
-            onClick={generateExcel}
-            className="bg-green-500 text-white px-4 py-2 rounded mr-2"
-          >
-            Download Purchase Order Excel
-          </button>
-          <button
-            onClick={generateSalesOrderExcel}
-            className="bg-yellow-500 text-white px-4 py-2 rounded"
-          >
-            Download Sales Order Excel
-          </button>
+        <div className="mt-6 space-x-2">
+          <Button onClick={generatePDF}>Download PDF</Button>
+          <Button>Export</Button>
         </div>
 
         <Card className="p-14 flex flex-col min-h-[890px] rounded-2xl">
