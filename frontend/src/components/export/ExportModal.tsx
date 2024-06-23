@@ -15,12 +15,20 @@ import {
   // type StepperProps,
   useStepper,
 } from "@/components/stepper";
+import FormatElement from "./elements/FormatElement";
 
 const steps = [
-  { label: "Step 1" },
-  { label: "Step 2" },
-  { label: "Step 3" },
-] satisfies StepItem[];
+  {
+    label: "Format",
+    component: <FormatElement />,
+  },
+  {
+    label: "Mapping",
+    component: <div>Mapping</div>,
+  },
+  { label: "Preview", component: <div>Preview</div> },
+  { label: "Export", component: <div>Export</div> },
+] satisfies (StepItem & { component: React.ReactNode })[];
 
 function ExportModal(props: { children: React.ReactNode }) {
   return (
@@ -28,9 +36,9 @@ function ExportModal(props: { children: React.ReactNode }) {
       <DialogTrigger asChild>{props.children}</DialogTrigger>
       <DialogContent className="sm:max-w-[700px]">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
+          <DialogTitle>Export Invoice</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            Export invoice in the accounting format of your choice.
           </DialogDescription>
         </DialogHeader>
         <div className="">
@@ -38,8 +46,8 @@ function ExportModal(props: { children: React.ReactNode }) {
             {steps.map((stepProps, index) => {
               return (
                 <Step key={stepProps.label} {...stepProps}>
-                  <div className="h-40 flex items-center justify-center my-2 border bg-secondary text-primary rounded-md">
-                    <h1 className="text-xl">Step {index + 1}</h1>
+                  <div className="min-h-40 flex items-center justify-center my-2 rounded-md">
+                    {stepProps.component}
                   </div>
                 </Step>
               );
