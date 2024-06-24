@@ -16,17 +16,21 @@ import {
   useStepper,
 } from "@/components/stepper";
 import FormatElement from "./elements/FormatElement";
+import MappingElement from "./elements/MappingElement";
+import PreviewElement from "./elements/PreviewElement";
 
 const steps = [
   {
     label: "Format",
-    component: <FormatElement />,
+    component: (
+      <FormatElement defaultValue="custom" onChange={(e) => console.log(e)} />
+    ),
   },
   {
     label: "Mapping",
-    component: <div>Mapping</div>,
+    component: <MappingElement />,
   },
-  { label: "Preview", component: <div>Preview</div> },
+  { label: "Preview", component: <PreviewElement /> },
   { label: "Export", component: <div>Export</div> },
 ] satisfies (StepItem & { component: React.ReactNode })[];
 
@@ -43,10 +47,10 @@ function ExportModal(props: { children: React.ReactNode }) {
         </DialogHeader>
         <div className="">
           <Stepper variant={"line"} initialStep={0} steps={steps}>
-            {steps.map((stepProps, index) => {
+            {steps.map((stepProps) => {
               return (
                 <Step key={stepProps.label} {...stepProps}>
-                  <div className="min-h-40 flex items-center justify-center my-2 rounded-md">
+                  <div className="min-h-40 my-2 rounded-md">
                     {stepProps.component}
                   </div>
                 </Step>

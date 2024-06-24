@@ -9,12 +9,19 @@ const choices = [
   { id: "custom", label: "Custom Format" },
 ];
 
-function FormatElement() {
+function FormatElement({
+  onChange,
+  defaultValue,
+}: {
+  onChange: (e: string) => void;
+  defaultValue: string | undefined;
+}) {
   return (
     <ToggleGroup
+      onValueChange={onChange}
       type="single"
       variant="outline"
-      defaultValue="custom"
+      defaultValue={defaultValue}
       size={"lg"}
       className="grid grid-cols-3 items-stretch gap-4"
     >
