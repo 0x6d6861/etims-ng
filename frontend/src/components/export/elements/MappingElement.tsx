@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { XIcon } from "lucide-react";
 
 function MappingElement() {
   return (
@@ -8,7 +10,20 @@ function MappingElement() {
         <TabsTrigger value="sales">Sales</TabsTrigger>
       </TabsList>
       <TabsContent value="purchaces">
-        Make changes to your account here.
+        <table className="w-full">
+          <tbody>
+            <tr>
+              <td>field</td>
+              <td>map</td>
+              <td>first row</td>
+              <td className="text-right">
+                <Button variant="ghost" size="icon">
+                  <XIcon className="h-4 w-4" />
+                </Button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </TabsContent>
       <TabsContent value="sales">Change your password here.</TabsContent>
     </Tabs>
