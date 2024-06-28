@@ -28,9 +28,12 @@ const steps = [
   },
   {
     label: "Mapping",
-    component: <MappingElement />,
+    component: <MappingElement software="quickbooks" type="purchase" />,
   },
-  { label: "Preview", component: <PreviewElement /> },
+  {
+    label: "Preview",
+    component: <PreviewElement software="quickbooks" type="purchase" />,
+  },
   { label: "Export", component: <div>Export</div> },
 ] satisfies (StepItem & { component: React.ReactNode })[];
 
@@ -46,11 +49,11 @@ function ExportModal(props: { children: React.ReactNode }) {
           </DialogDescription>
         </DialogHeader>
         <div className="">
-          <Stepper variant={"line"} initialStep={0} steps={steps}>
+          <Stepper variant={"circle"} initialStep={0} steps={steps}>
             {steps.map((stepProps) => {
               return (
                 <Step key={stepProps.label} {...stepProps}>
-                  <div className="min-h-40 my-2 rounded-md">
+                  <div className="min-h-40 my-2 mt-8 rounded-md">
                     {stepProps.component}
                   </div>
                 </Step>

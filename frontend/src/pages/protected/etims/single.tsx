@@ -200,7 +200,6 @@ const generateSalesOrderExcel = () => {
   );
 };
 
-// @ts-ignore
 const mapping = {
   quickbooks: {
     purchase: {

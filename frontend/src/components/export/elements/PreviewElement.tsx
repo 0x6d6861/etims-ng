@@ -6,27 +6,32 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { AccountingSoftware, AccountingType, mappings } from "./type";
 
-function PreviewElement() {
+function PreviewElement(props: {
+  software: AccountingSoftware;
+  type: AccountingType;
+}) {
+  const mapping = mappings?.[props.software]?.[props.type] || {};
+
   return (
-    <Table>
+    <Table className="w-full border border-gray-100">
       {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
-      <TableHeader>
+      <TableHeader className="bg-gray-100">
         <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          {Object.keys(mapping).map((key) => (
+            <TableCell key={key}>{key}</TableCell>
+          ))}
         </TableRow>
       </TableHeader>
-      <TableBody>
+      {/* <TableBody>
         <TableRow>
           <TableCell className="font-medium">INV001</TableCell>
           <TableCell>Paid</TableCell>
           <TableCell>Credit Card</TableCell>
           <TableCell className="text-right">$250.00</TableCell>
         </TableRow>
-      </TableBody>
+      </TableBody> */}
     </Table>
   );
 }

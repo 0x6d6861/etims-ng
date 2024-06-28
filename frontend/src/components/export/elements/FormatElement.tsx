@@ -1,13 +1,5 @@
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-
-const choices = [
-  { id: "quickbooks", label: "Quickbooks", icon: "quickbooks" },
-  { id: "sage", label: "Sage Accounting", icon: "sage" },
-  { id: "odoo", label: "Odoo", icon: "odoo" },
-  { id: "zoho", label: "Zoho", icon: "zoho" },
-  { id: "salesforce", label: "Salesforce", icon: "salesforce" },
-  { id: "custom", label: "Custom Format" },
-];
+import { choices } from "./type";
 
 function FormatElement({
   onChange,
