@@ -1,11 +1,4 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
+import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { AccountingSoftware, AccountingType, mappings } from "./type";
 
 function PreviewElement(props: {
@@ -20,7 +13,7 @@ function PreviewElement(props: {
       <TableHeader className="bg-gray-100">
         <TableRow>
           {Object.keys(mapping).map((key) => (
-            <TableCell key={key}>{key}</TableCell>
+            <TableHead key={key}>{key}</TableHead>
           ))}
         </TableRow>
       </TableHeader>

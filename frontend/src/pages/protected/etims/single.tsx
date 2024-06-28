@@ -200,37 +200,6 @@ const generateSalesOrderExcel = () => {
   );
 };
 
-const mapping = {
-  quickbooks: {
-    purchase: {
-      "Vendor Name": "invoiceData.customerDetails.name",
-      Date: "invoiceData.scuInfo.Date.split(' ')[0]",
-      "Purchase Order Number": "invoiceData.customerDetails.invoiceNumber",
-      Item: "item.code",
-      Description: "item.description",
-      Quantity: "item.quantity",
-      Rate: "item.unitPrice",
-      Amount: "item.total",
-      Customer: "item.clientName",
-      Class: "",
-      Other: "",
-    },
-    sales: {
-      "Customer Name": "invoiceData.customerDetails.name",
-      Date: "invoiceData.scuInfo.Date.split(' ')[0]",
-      "Sales Order Number": "invoiceData.customerDetails.invoiceNumber",
-      Item: "item.code",
-      Description: "item.description",
-      Quantity: "item.quantity",
-      Rate: "item.unitPrice",
-      Amount: "item.total",
-      "Sales Rep": "",
-      Class: "",
-      Other: "",
-    },
-  },
-};
-
 function single() {
   return (
     <div className="w-full max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
