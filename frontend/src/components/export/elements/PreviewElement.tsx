@@ -1,4 +1,3 @@
-import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { AccountingSoftware, AccountingType, mappings } from "./type";
 
 function PreviewElement(props: {
@@ -8,15 +7,15 @@ function PreviewElement(props: {
   const mapping = mappings?.[props.software]?.[props.type] || {};
 
   return (
-    <Table className="w-full border border-gray-100">
+    <table className="w-full border border-gray-100">
       {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
-      <TableHeader className="bg-gray-100">
-        <TableRow>
+      <thead className="bg-gray-100">
+        <tr>
           {Object.keys(mapping).map((key) => (
-            <TableHead key={key}>{key}</TableHead>
+            <th key={key}>{key}</th>
           ))}
-        </TableRow>
-      </TableHeader>
+        </tr>
+      </thead>
       {/* <TableBody>
         <TableRow>
           <TableCell className="font-medium">INV001</TableCell>
@@ -25,7 +24,7 @@ function PreviewElement(props: {
           <TableCell className="text-right">$250.00</TableCell>
         </TableRow>
       </TableBody> */}
-    </Table>
+    </table>
   );
 }
 

@@ -21,6 +21,9 @@ import {
 import { Separator } from "@radix-ui/react-separator";
 import { Button } from "@/components/ui/button";
 import ExportModal from "@/components/export/ExportModal";
+import NewExportModal from "@/components/export/NewExportModal";
+import { useState } from "react";
+import { AccountingSoftware } from "@/components/export/elements/type";
 
 const invoiceData = {
   customerDetails: {
@@ -206,9 +209,9 @@ function single() {
       <div className="space-y-8">
         <div className="mt-6 space-x-2">
           <Button onClick={generatePDF}>Download PDF</Button>
-          <ExportModal>
+          <NewExportModal>
             <Button>Export</Button>
-          </ExportModal>
+          </NewExportModal>
         </div>
 
         <Card className="p-14 flex flex-col min-h-[890px] rounded-2xl">

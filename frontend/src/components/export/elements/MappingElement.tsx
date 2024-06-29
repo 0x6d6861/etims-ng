@@ -20,10 +20,13 @@ import {
 } from "@/components/ui/table";
 
 function MappingElement(props: {
-  software: AccountingSoftware;
-  type: AccountingType;
+  software?: AccountingSoftware | undefined;
+  type?: AccountingType | undefined;
 }) {
-  const mapping = mappings?.[props.software]?.[props.type] || {};
+  const mapping =
+    mappings?.[props.software as AccountingSoftware]?.[
+      props.type as AccountingType
+    ] || {};
   const mapsTo = Object?.values(mapping)?.filter(Boolean) || [];
   return (
     <Tabs defaultValue="purchaces" className="w-full">

@@ -1,12 +1,12 @@
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { choices } from "./type";
+import { AccountingSoftware, choices } from "./type";
 
 function FormatElement({
   onChange,
   defaultValue,
 }: {
-  onChange: (e: string) => void;
-  defaultValue: string | undefined;
+  onChange: (e: AccountingSoftware) => void;
+  defaultValue?: string | undefined;
 }) {
   return (
     <ToggleGroup
