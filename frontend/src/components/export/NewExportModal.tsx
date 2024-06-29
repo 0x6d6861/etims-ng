@@ -28,9 +28,13 @@ function NewExportModal(props: { children: React.ReactNode }) {
         </DialogHeader>
         <div className="">
           <FormatElement onChange={(e) => setSoftwate(e)} />
-          <MappingElement software={software} type="purchase" />
-          <PreviewElement software={software} type="purchase" />
-          <ExportElement />
+          {software === "custom" && (
+            <>
+              <MappingElement software={software} type="purchase" />
+              {/* <PreviewElement software={software} type="purchase" /> */}
+            </>
+          )}
+          {!!software && <ExportElement software={software} type="purchase" />}
         </div>
       </DialogContent>
     </Dialog>
