@@ -31,18 +31,21 @@ function SendEmailModal(props: { children: React.ReactNode }) {
             <div className="grid w-full items-center gap-1.5">
               {/* <Label htmlFor="email">Email</Label> */}
               <Input
-                className="border-none shadow-none"
+                className="border-none shadow-none text-lg focus-visible:ring-0 px-0"
                 type="email"
                 id="email"
                 placeholder="Email"
               />
             </div>
             <Separator className="h1 border-gray-200" />
-            <Input className="border-none shadow-none" placeholder="Subject" />
+            <Input
+              className="border-none shadow-none text-lg focus-visible:ring-0 px-0"
+              placeholder="Subject"
+            />
             <Separator className="h1 border-gray-200" />
             <Textarea
               rows={8}
-              className="border-none shadow-none"
+              className="border-none shadow-none text-lg focus-visible:ring-0 px-0"
               placeholder="Type your message here."
             />
           </div>
