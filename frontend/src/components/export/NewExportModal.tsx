@@ -9,12 +9,11 @@ import {
 } from "../ui/dialog";
 import FormatElement from "./elements/FormatElement";
 import MappingElement from "./elements/MappingElement";
-import PreviewElement from "./elements/PreviewElement";
 import { AccountingSoftware } from "./elements/type";
 import ExportElement from "./elements/ExportElement";
 
 function NewExportModal(props: { children: React.ReactNode }) {
-  const [software, setSoftwate] = useState<AccountingSoftware>(null);
+  const [software, setSoftwate] = useState<AccountingSoftware>();
 
   return (
     <Dialog>
