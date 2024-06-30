@@ -9,6 +9,10 @@ import {
   DialogTrigger,
 } from "../ui/dialog";
 import { Button } from "../ui/button";
+import { Textarea } from "../ui/textarea";
+import { Input } from "../ui/input";
+import { Separator } from "../ui/separator";
+import { Label } from "../ui/label";
 
 function SendEmailModal(props: { children: React.ReactNode }) {
   return (
@@ -23,7 +27,25 @@ function SendEmailModal(props: { children: React.ReactNode }) {
           </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4">
-          <p>hello</p>
+          <div className="space-y-2">
+            <div className="grid w-full items-center gap-1.5">
+              {/* <Label htmlFor="email">Email</Label> */}
+              <Input
+                className="border-none shadow-none"
+                type="email"
+                id="email"
+                placeholder="Email"
+              />
+            </div>
+            <Separator className="h1 border-gray-200" />
+            <Input className="border-none shadow-none" placeholder="Subject" />
+            <Separator className="h1 border-gray-200" />
+            <Textarea
+              rows={8}
+              className="border-none shadow-none"
+              placeholder="Type your message here."
+            />
+          </div>
           <div className="space-y-2">
             <div className="flex flex-row items-center gap-2">
               <div className="">
