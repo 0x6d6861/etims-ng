@@ -27,6 +27,7 @@
     "@reduxjs/toolkit": "^2.2.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "emblor": "^1.4.0",
     "file-saver": "^2.0.5",
     "firebase": "^10.12.2",
     "geist": "^1.2.0",
