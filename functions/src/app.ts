@@ -1,14 +1,9 @@
-/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
-/* eslint-disable max-len */
 import express, {Express, NextFunction, Request, Response} from "express";
 import multer from "multer";
 import admin from "firebase-admin";
 import {extractPinAndSignature, getJSONData, parsePDF} from "./utils/utils";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 10MB
-
-
-admin.initializeApp();
 
 const app: Express = express();
 const upload = multer({storage: multer.memoryStorage()});

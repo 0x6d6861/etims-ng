@@ -33,6 +33,7 @@ module.exports = {
     "@typescript-eslint/no-var-requires": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
     "require-jsdoc": 0,
     "indent": ["error", 2],
     "max-len": ["error", {"code": 150}],

@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import admin from "firebase-admin";
 import {DecodedIdToken} from "firebase-admin/auth";
 
