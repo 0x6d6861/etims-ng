@@ -28,6 +28,14 @@
       "**/node_modules/**"
     ],
     "rewrites": [
+       {
+        "source": "/api/**",
+        "function": {
+          "functionId": "api",
+          "pinTag": true       
+
+        }
+      },
       {
         "source": "**",
         "destination": "/index.html"
